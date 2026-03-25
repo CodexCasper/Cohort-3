@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deleting elements</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1> TO DO LIST </h1>
+    <div>
+
+        <div id="todo-1" style="display: flex;">
+            <h4>1. Go to Gym</h4>
+            <button onclick="deleteTodo(1)">delete</button><!--'onclick' is an attribute which is used when we click this delete button it takes us to function called 'deletetodo' -->
+        </div>
+
+        <div id="todo-2">
+            <h4>2. Study Relentlessly</h4>
+            <button onclick="deleteTodo(2)">delete</button>
+        </div>
+
+    </div>
+
+    <div>
+
+        <input type="text" placeholder="add you to do here" ></input>
+        <button>Add To Do</button>
+
+    </div>
+
+    <script>
+        function deleteTodo(index){
+            const element = document.getElementById("todo-" + index);
+            element.parentNode.removeChild(element);
+            //or we can write => element.parentNode.removeChild(element);
+        }
+    </script>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <H2>TITLE: CREATING ELEMENTS</H2>
+    <P> hi there </P>
+    <script src="script1.js"></script>
+
+</body>
+</html>

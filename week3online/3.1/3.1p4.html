@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating our own to do</title>
+</head>
+<body>
+    <div>
+        <input type="text" placeholder="Add your to do here"></input>
+        <button onclick="addtodo()">Add todo</button>
+    </div>
+    <!--if the ( div,span ) has id then we will use ".span" in queryselector and if we use class then we must use "#span" 
+    and the same thing goes for styling the elements-->
+</body>
+    <script>
+        let ctr = 1;
+        function deletetodo(index){
+            console.log("called");
+            const element = document.getElementById(index);
+            element.parentNode.removeChild(element);
+        }
+
+        function addtodo(){
+          const inputEl = document.querySelector("input");  
+          const value = inputEl.value;
+
+          const newDivEl = document.createElement("div");
+          newDivEl.setAttribute("Id",ctr);
+
+          newDivEl.innerHTML = "<div>"  + value +   "</div><button onclick='deletetodo(" + ctr + ")'>delete</button>";// here what happenning is 'innerhtml' means what is inside that html , so here we can literally create a new div element every timme we click button 
+          //" +value+ " , means string concatention wich means we are joining strings ttogether
+          ctr += 1;//make sure that ctr is called after innerhmtl bcoz if id = 1 then delete will occur on '2'
+          document.querySelector("body").appendChild(newDivEl);
+        }
+    </script>
+
+</html>

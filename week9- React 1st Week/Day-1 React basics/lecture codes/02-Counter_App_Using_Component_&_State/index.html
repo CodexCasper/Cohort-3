@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Counter using component and state
+    </title>
+</head>
+<body>
+    <div id="btn"></div>
+    <script>
+
+    // defining a state object with a counter variable
+     let state = {
+        count: 0
+     };
+
+    //just a function which responds when button get clicked and its work is updating the count 
+     function onbuttonpress(){// statevariable
+        state.count++; // or state.count = state.count + 1;
+        buttonreRendering();
+     }
+     
+     function buttonreRendering(){
+        //clears the div to make space for the new button
+        document.getElementById("btn").innerHTML = " ";
+        //create a new button with the updated count
+        const component = buttoncomponent(state.count);
+        // add the button to the document
+        document.getElementById("btn").appendChild(component);
+     }
+
+     // a function for component, means jab bhi state change hogi what to do then component aisa bana do that is it
+     function buttoncomponent(count){
+        //creating a new button element 
+        const button = document.createElement("button");
+
+        //sets the button's inside to display the current ones
+        button.innerHTML = "counter " + count;
+
+        //when the button get clicked then call "onbuttonpress" function 
+        button.setAttribute("onclick", "onbuttonpress");
+        return button;
+     }
+     buttonreRendering()
+     </script>
+</body>
+</html>
+<!--NOTES:
+    - the next code of button rerendering work is what react do on it own means replacing the button , here this code is readable and we haeve seperate components and state here 
+    - here we just need to update the  statevarible and rerendeing happpens the buttoncomponent
+    - rerendering means that jo bhi change state me hora usko component me alag kr do 
+    - so basically component is the outer things which gives the structure and state is the inner thing that changes 
+ -->

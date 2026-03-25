@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- defining a button when we click it's counter gets incremented -->
+    <button onclick="onbuttonpress()" id="btn">counter 0</button>
+    <script>
+        //defining a function which is called when button gets clicked to update the counter button evrytime it got clicked
+        function onbuttonpress(){
+            //we are getting the button with DOM manipulation by It's Id and also storing its inner value(counter 0) through innerHTML
+            const currentvalue = document.getElementById("btn").innerHTML;
+
+            //now we are spliting our value(counter 0) into ["counter","0"] and getting it's 1th element (0)
+            const splitting = currentvalue.split(" ")[1];
+
+           //parsing splitting into integer otherwise it will become string
+            const newcounter = parseInt(splitting) + 1;
+           
+            //and updating the value everytime it get clicked 
+            document.getElementById("btn").innerHTML = "counter" + newcounter;
+        }
+    </script>
+</body>
+</html>

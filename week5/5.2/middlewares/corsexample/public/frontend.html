@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORS example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <script>
+        function sendrequest(){
+            axios.post("http://localhost:3000/sum",{// here we are posting values of a and b by taking input
+                a : document.getElementById("1").value,// we know that we ccan fetch the value by using DOM 
+                b : document.getElemenById("2").value
+            }) 
+        }
+    </script>
+</head>
+<body>
+    <div id="posts"></div>
+
+    <input id="1" type="text" placeholder="Enter first number"></input>
+    <input id="2" type="text" placeholder="Enter second number"></input>
+    <button onclick="sendrequest">Find sum</button>
+
+</body>
+</html>
+<!--NOTES 
+    - WHEN WE WILL GO LIVE then 'http://127.0.0.1:5500/week5/5.2/middlewares/corsexample/frontend.html' is the url shown but we want it on http://localhost:3001 or 2
+    - run a command 'npx serve' it serves a folder over http, can basically do 'npx serve' on a folder, and access it via the ip and port given by serve from any device on the same network
+    - we hosted frontend and backend different and tried to access backend thorugh frontend and it can not happen beacuse of CORS policy
+-->

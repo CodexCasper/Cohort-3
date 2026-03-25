@@ -1,0 +1,14 @@
+Notes: 
+
+1. Starting a react project locally:
+    - There are various ways to bootstrap a react project locally. Vite is the most widely used one today.
+    - Command : npm create vite@latest
+
+
+2. components and state:
+  -In react, components are the building blocks of the user interface. They allow you to split the UI into independent, reusable peices that can be thought of as custom, self-contained HTML elements
+  
+  - State is an object that holds the information about the components current situation, state can change over time and when it changes then 'REACT' re-renders the compoonents to reflect the updated UI
+
+3.useState Hook
+  - this hook is used define state of my application  

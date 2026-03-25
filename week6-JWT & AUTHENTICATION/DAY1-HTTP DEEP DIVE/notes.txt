@@ -1,0 +1,37 @@
+
+1. what is authentication ?
+
+=> the process of letting users 'sign in / sign out' of your website , making sure your routes are protected and users can only get back their own data and not the data from different user 
+
+=>It is the process of verifying the identity of a user, ensuring they are who they claim to be. This is typically achieved through the use of credentials, such as usernames and passwords. It involves letting users sign in/sign out of your website, ensuring that routes are protected, and that users can only access their own data and not data from other users.
+
+2. auth workflow 
+
+=> let us send a signup request(http request) from our browser to some website let's say facebook and it stores our data in its database and it returns signed in back to our browser 
+=> afterwards when we will required to signin then facebook reply to request as 'TOKEN' and this token somehow gets saved in our browser and when we will send subsequent request(get) to suppose see all the posts on facebook same token gets send to facebook and facebook identify us by the token it sends us before and we need to keep this token very safe 
+
+ 3.=> BANK EXAMPLE
+ When we you to open a bank account in a bank 
+ 1.go to the bank and give your information
+ 2.they give you back a 'cheque book'
+ 3.every time you want to send money, you write it in cheque book and send it to the bank 
+ 4.this is how the bank identifies
+ 
+ 
+4. What is Token Authentication?
+ - Token authentication works by generating a random string (token) for the user when they authenticate. The token is included in the HTTP Authorization header on each subsequent request and is validated by checking the database on each request. The benefit of token authentication is its simplicity, as it keeps user credentials secure. The credentials are only sent to the server once and are never stored or cached for future requests, ensuring their security.
+
+
+5. token vs JWTs( json web token) 
+- PROBLEM: the problem in our 01-basic authentication approach(generatig random long token) is we are hitting the database too much THAT means we are needed to send request to database everytime user wants to hit an authenticated endpoint 
+- SOLUTION: JWTs, 
+- when the user signin then the backend somehow encrypt the username of the user which will be the token generated for the user and when user go to /me then backend decrypts the token and find the username
+
+- Stateful tokens require storing token data in a variable or database. This necessitates a database request every time the user accesses an authenticated endpoint, leading to potential inefficiencies.
+- JWTs are compact and self-contained, representing information between two parties. They are stateless, containing all the information needed to authenticate a request within the token itself. This means the server does not need to store session data, as all necessary data is included in the token.
+
+
+6. what are JWTs ?
+- JWTs, or JSON Web Tokens, are a compact and self-contained way to represent information between two parties. They are commonly used for authentication and information exchange in web applications.
+- JWTs are Stateless:: JWTs contain all the information needed to authenticate a request, so the server doesn’t need to store session data. All the data is stored in the token itself.
+ 

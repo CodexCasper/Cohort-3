@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+ <!-- 'DOM' stands for 'document object model' which means it is the browser's internal representation of your HTML page which js can manipulate to update UI dynamically-->
+<!--Definition => Dom abstracts the struture of the document into tree of objects, allowing scripts to manipulate the content and structure dynnamically -->
+<style>
+    #todo3 {
+        background-color:aqua;
+    }
+    .mypucchu {
+        background-color: blueviolet;
+    }
+</style>
+<body>
+<!-- Goal is to make it dynamic-->
+    <h1> TO DO LIST </h1>
+    <H4 class="mypucchu">1. DSA </H4> <!-- here we can do two things specically 1.Edit our to do , 2.Delete it -->
+    <H4 class="mypucchu">2. WEB DEV </H4>
+    <h4 id="todo3">3. go to gym </h4>
+    <div>
+        <input type="text" placeholder="Add your to do here" ></input><!--here we want to read the context written in search bar we are taking input-->
+        <button id="btn" onclick="addtodo()"> Add To Do </button><!-- "onclick" is just a attribute here which means whenever the buttonn gets clicked call the 'addtodo' function in script-->
+        <!--id is just a unique identifier for a tag , and it can not be same for every tag each tag should have different element-->
+        <!-- class is just opp. of id , when we want some elements to have same thing then we use class -->
+    </div>
+    <script>
+        function addtodo(){
+
+       //document is the entry point of DOM , where we will access all thes things
+        const fetch1st = document.querySelector("input");//the line " const inputEl = document.queryselector("input");" helps to find the line in our code
+        console.log(fetch1st.value);// and the next line "console.log( inputEL.value ) is printing the value , we must use 'value' for input box 
+
+        //here whenever the button gets clicked the function gets called and we log the value whatever is written over there(input)
+       //'querselector is used for only first element of the tag'
+       }
+        const fetch2nd = document.querySelectorALL("H4");//used for all the elements of the tag
+        console.log(fetch2nd.innerHTML);
+
+        const Fetch2nd = document.querySelectorALL("H4")[2];//used to find particular element of the tag
+        console.log(fetch2nd.innerHTML);
+
+        const fetch3rd = document.querySelectorALL("#todo3");// # is used to use querySelector using 'id'
+        console.log(fetch3rd.innerHTML);
+        //or we can use document.getElementById("todo3")
+
+        const fetch4th = document.querySelector('.mypucchu');// FOR classes
+        console.log(fetch4th.innerHTML);
+        //or we can use document.getElementsByClassName("mypucchu")
+
+        const h1Element2 = document.querySelector("h1");
+        console.log( h1Element2.innerHTML);//here to know what is inside h1 we must use innerhmtl
+    </script>
+
+    <!-- 'document' is the built-in-global object provided by the browser , which represents the DOM of the current webpage -->
+    <!--means it is the live representation of your entire HTML page , by logginng it you are viewing the DOM object in the console -->
+
+    <!--work of js is not writing names here , but to add functionality over here -->
+
+<!--Foundation of DOM( document object model )
+1.Fetching Elements 
+  (a)querySelector ,fetching the content (make sure the S is capital in queryselector )
+  (B)querSelectorall, fetches all the content for whatever input we ask
+  (C)getElementById , uses  tags using id
+  (D)getElementsByclassName 
+-->
+
+</body>
+</html>

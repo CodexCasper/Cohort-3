@@ -1,0 +1,63 @@
+<!-- # STATE DERIVED FRONTENDS -->
+
+<!-- 
+ 1.STATE => Is a dynamic part of our app look like  
+ 2.COMPONENT => Is a static wireframe of what we want to render 
+ 3.RENDERING => Taking the STATE  and rendering it to the DOM based on the COMPONENTS 
+-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <input type="text" placeholder="Add your to do" ></input>
+    <button onclick="addToDo()">Add To Do !</button>
+
+    <button onclick="deleteFirstToDo()">deleteFirstToDo</button>
+
+    <button onclick="deleteLastToDo()">deleteLastToDo</button>
+
+    <div id="todos"></div>
+    <script>
+    let todos = [];
+    function addToDo(){
+        todos.push({
+            title:document.querySelector("input").value
+        })
+        render();
+    }
+
+    function deleteLastToDo(){
+        todos.splice(todos.length-1,1)
+        render();
+    }
+
+    function deleteFirstToDo(){
+        todos.splice(0,1)
+        render();
+    }
+
+    function render(){
+        document.querySelector("#todos").innerHTML = "";
+        for( let i = 0 ; i < todos.length ; i++ ){
+                const todo = todos[i];
+                const div = document.createElement("div");
+                const h1 = document.createElement("h1");
+                const button = document.createElement("button");
+
+                h1.innerHTML = todo.title;
+                button.innerHTML = "Delete";
+
+                div.append(h1);
+                div.append(button);
+
+                document.querySelector("#todos").appendChild(div);
+        }
+    }
+    </script>
+ </body>
+ </html>
