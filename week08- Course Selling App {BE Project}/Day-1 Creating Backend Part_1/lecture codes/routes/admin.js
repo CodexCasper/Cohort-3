@@ -22,7 +22,7 @@ adminRouter.put("/course", function(req,res){
 
 })
 //give me all the courses that i have created 
-adminRouter.post("/course/bulk", function(req,res){
+adminRouter.get("/course/bulk", function(req,res){
 
 })
 

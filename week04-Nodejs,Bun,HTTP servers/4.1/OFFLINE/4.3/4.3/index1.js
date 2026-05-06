@@ -29,6 +29,7 @@ What should happen if they try to make a kidney healthy when all are already hea
 const express = require("express");
 
 const app = express();
+
 //kind of mini databse
 const users =[{ // this is an arr of objects 
     NAME: 'Parth bindal',
@@ -41,7 +42,7 @@ const users =[{ // this is an arr of objects
 app.use(express.json());
 
 //1st route
-app.get("/", function (req,res){// to get this 'GET' request we clicl local host and we get it or '/' affter 3000 is also same 
+app.get("/", function (req,res){// to get this 'GET' request we click local host and we get it or '/' after 3000 is also same 
     //write logic for 'get'
     const parthkidney = users[0].KIDNEY;
     const noofkidney = parthkidney.length;
@@ -65,7 +66,7 @@ app.post("/", function (req,res){
     //write logic for 'post'
     //we write 'post' logic usually in body, means another way to specify our input
     // console.log(req.body);
-    const ishealthy = req.body.ishealthy; // way to get input, as in post we taking input and updating our database 
+    const ishealthy = req.body.isHealthy; // way to get input, as in post we taking input and updating our database 
     users[0].KIDNEY.push({
         HEALTHY: ishealthy
     }) //  we can send post request using 'POSTMAN'
@@ -95,7 +96,7 @@ app.delete("/", function (req,res){// we need to remove all the unhealthy kidney
         }
     }
     users[0].KIDNEY = newarr;
-    req.json({
+    res.json({
         msg:"done!"
     })
     }

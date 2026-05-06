@@ -2,7 +2,7 @@
 
 // Suppose we have a service(or smthng) that we want to expose to the world !
 // how we can ?
-// using  HTTP SERVER ( HYPERTEXT MAKRUP PROTOCOL )
+// using  HTTP SERVER ( HYPERTEXT MAKRUP PROTOCOL ) => a program that listens to http requests and sends back http responses 
 // HOW DO WE CREATE ONE ? => EXPRESS 
 
 const express = require("express") // what is express here ? => bsically a library which is name 'express' which let us create http servers

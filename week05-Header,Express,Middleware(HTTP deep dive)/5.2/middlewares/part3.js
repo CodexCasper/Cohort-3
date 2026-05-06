@@ -3,7 +3,7 @@ const bodyparser = require("body-parser")// external library used to parse the b
 
 const app = express();
 
-// we can send body horugh postman and then are seeing error 
+// we can send body through postman and then are seeing error 
 // in express, if we want to send JSON data     
 // we need to first parse(convert it into the Javascript object) the data
 

@@ -10,7 +10,7 @@ const { adminRouter } = require("./routes/admin")
 
 const app = express();
 
-app.use("/user", userRouter);                           ////yaha prefix daal diye ki "/user" se jo bhi req ayega woh userRouter ke pass jyega 
+app.use("/user", userRouter);                           ////yaha prefix daal diye ki "/user" se jo bhi req ayega woh userRouter ke pass jyega , userrouter usko handle krega simple 
 app.use("/course", courseRouter);                          // same yaha pr bhi prefix dal diye kiye ki "/course" se jo bhi req ayega vo courseRouter ke pass jayega
 app.use("/admin", adminRouter);
 

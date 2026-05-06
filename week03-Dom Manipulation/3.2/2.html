@@ -5,13 +5,13 @@
  2.COMPONENT => Is a static wireframe of what we want to render 
  3.RENDERING => Taking the STATE  and rendering it to the DOM based on the COMPONENTS 
 -->
-
+<!--basically "component" is a function that returns a UI (like a reusable peice of UI i.e button, todo item), and state is basically data that can channge over time(exists bcoz ui is not static) -->
  <!DOCTYPE html>
  <html lang="en">
  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Learning state and component</title>
  </head>
  <body>
     <input type="text" placeholder="Add your to do" ></input>
@@ -26,13 +26,13 @@
     let todos = [];
     function addToDo(){
         todos.push({
-            title:document.querySelector("input").value
+            title: document.querySelector("input").value
         })
         render();
     }
 
     function deleteLastToDo(){
-        todos.splice(todos.length-1,1)
+        todos.splice(todos.length - 1,1)
         render();
     }
 
@@ -52,8 +52,8 @@
                 h1.innerHTML = todo.title;
                 button.innerHTML = "Delete";
 
-                div.append(h1);
-                div.append(button);
+                div.appendChild(h1);
+                div.appendChild(button);
 
                 document.querySelector("#todos").appendChild(div);
         }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practise</title>
+</head>
+<body>
+    <input type="text" placeholder="add your to do here"></input>
+    <button onclick="addtodo()">Click here!</button>
+</body>
+<script>
+    let ctr = 1;
+    function deleteToDo(index){
+        const element = document.getElementById(index);
+        element.parentNode.removeChild(element);
+    }
+
+    function addtodo(){
+        const inputEl = document.querySelector("input");
+        const value = inputEl.value;
+
+        const newDivEl = document.createElement("div");
+        newDivEl.setAttribute("Id",ctr);
+
+        newDivEl.innerHTML = 
+        "<div>" + value + "</div>" + 
+        "<button onclick='deleteToDo(" + ctr + ")'>delete</button>"; 
+        ctr += 1;
+        document.querySelector("body").appendChild(newDivEl);
+    }
+</script>
+</html>

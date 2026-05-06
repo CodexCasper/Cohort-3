@@ -3,7 +3,7 @@
 
 => the process of letting users 'sign in / sign out' of your website , making sure your routes are protected and users can only get back their own data and not the data from different user 
 
-=>It is the process of verifying the identity of a user, ensuring they are who they claim to be. This is typically achieved through the use of credentials, such as usernames and passwords. It involves letting users sign in/sign out of your website, ensuring that routes are protected, and that users can only access their own data and not data from other users.
+=> It is the process of verifying the identity of a user, ensuring they are who they claim to be. This is typically achieved through the use of credentials, such as usernames and passwords. It involves letting users sign in/sign out of your website, ensuring that routes are protected, and that users can only access their own data and not data from other users.
 
 2. auth workflow 
 

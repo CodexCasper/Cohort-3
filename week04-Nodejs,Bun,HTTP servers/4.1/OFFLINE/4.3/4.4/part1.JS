@@ -26,20 +26,20 @@ app.get("/ride1", function(req,res){// we can access this route by writing path 
     })// Only res.* sends data back to the client, if we had use console etc then it returns on server not client and using JSON(api supported)
   }
   else{
-    res.status(411).json({
+    res.status(403).json({
         msg:" Go get bigger motherfucker"
     })
   }
 })
 
-app.get("/ride2", function(req,res){// we can access this route by writing path '/ride1' ater localhost 
+app.get("/ride2", function(req,res){// we can access this route by writing path '/ride2' ater localhost 
     if( itnebaddeho(req.query.age) ){
     res.json({
         msg: " you rode your 2st bike " 
     })// Only res.* sends data back to the client, if we had use console etc then it returns on server not client and using JSON(api supported)
   }
   else{
-    res.status(411).json({
+    res.status(403).json({
         msg:" Go get bigger motherfucker"
     })
   }

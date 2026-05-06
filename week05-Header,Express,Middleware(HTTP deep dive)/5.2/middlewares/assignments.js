@@ -15,7 +15,7 @@ function middleware(req,res,next){
 app.use(middleware);
 
 app.get("/sum", function(req,res){
-    re.json({
+    res.json({
         msg:"done!"
     })
 })

@@ -18,7 +18,7 @@ const app = express();
  username:"parth", password:"123455" , token: "hehfehfhdsfjhsdgbf"(token is randomly generated)
 })
 */
-app.use(express.json())// using express.json as a middleware to parse the post request body 
+app.use(express.json())// using express.json as a middleware to parse the post request body  , this line simply means that whenever someone sends data to my server , it reads it and converts it smthng that can we can use easily 
 
 const users = [];// a global user array to store username,password,tokens 
 
@@ -33,7 +33,7 @@ function generateToken(){
 }
 
 app.post("/signup", function(req,res){
-    const username = req.body.username;
+    const username = req.body.username; // req.body bcoz signup sends the data inside the request body(post request)
     const password = req.body.password;
 
     users.push({
@@ -55,7 +55,8 @@ app.post("/signin",function(req,res){
 
 
     // now we must check first if the username and password exist so that we can return token 
-    const foundUser = users.find(function(u){ // this is the in memory variable for that user 
+    const foundUser = users.find(function(u){ // this is the in memory variable for that user , means in javascript " Objects in javascript are created by reference ,not copied"
+        //the above founduser gives us the direct reference to the same object inside the array 
         if(u.username == username && u.password == password){
             return true;
         }
@@ -76,7 +77,7 @@ app.post("/signin",function(req,res){
 
 if( foundUser ){
     const token = generateToken();
-    foundUser.token = token; // this step means we are storing token also along with username and password 
+    foundUser.token = token; // this step means we are storing token also along with username and password , we are modifying the same object inside users 
 
     res.json({
         message: token

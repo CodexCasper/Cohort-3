@@ -1,12 +1,11 @@
 //  TOPIC: PROMISES
 
-//1.topic is 'CLASSES' 
+// 1.topic is 'CLASSES' 
 // first of all let us discuss the basics 
 // 'PRIMITIVE TYPES' => 1.number 2.string 3.boolean 4.null 5.bigInt 6.undefined 7.symbol
-//'COMPLEX TYPES' => 1.objects(which consists of key value pairs) 2. arrays(uses collective information)
+// 'COMPLEX TYPES' => 1.objects(which consists of key value pairs) 2. arrays(uses collective information)
 
 //"CLasses" => are basically a way to define blueprint to create objects , (these objects are different from the objects(key-value pairs))
-
 
 //this is the native way to do things right here( not clear way to write syntax )
 const rect1 = {
@@ -28,7 +27,7 @@ console.log(ans);
 class rectangle{// A class is a blueprint or a structure where we define properties(data) and methods(functions) related to an object
     constructor(width,height,color){
         this.width = width; // "this" assign or attach the values to this parameters
-        this.height = height; // width, height,color are the parameters 
+        this.height = height; // width, height, color are the parameters 
         this.color = color;
         //(constructor) is a special method which automatically runs when we create a instance with "new"
         // calling new rectangle(20,40,"blue") is creating an object of key value pair
@@ -87,7 +86,7 @@ setTimeout(main,7000000000);
 //we can say that promises are just a syntactically more practical way to write instead of callbacks
 //promises
 function setTimeoutPromisfied(ms){
-    return new promise(resolve => setTimeout(resolve,ms));
+    return new Promise(resolve => setTimeout(resolve,ms));
     //another way we can say it is returning object of promise class 
 
     //another way let p = new promise(resolve => setTimeout(resolve,ms))
@@ -96,7 +95,9 @@ function setTimeoutPromisfied(ms){
 function callback(){
     console.log("3 seconds have passed");
 }
-setTimeoutPromsified(3000).then(callback);// then represents that when promise eventually get completed then it will call this function
+setTimeoutPromisified(3000).then(callback);// then represents that when promise eventually get completed then it will call this function
+
+
 
 
 // another example
@@ -105,11 +106,11 @@ function waitfor3S(myvariable){
 }
 
 function setTimeoutPromisified(){
-    return new promise(waitfor3S); // what promise classs do here is it takes one function over here which is 'waitfor3S' and whatever the first argumment of this function 'myvariable' whenever this will be called it will call whatever is passed over 'this'
+    return new Promise(waitfor3S); // what promise classs do here is it takes one function over here which is 'waitfor3S' and whatever the first argumment of this function 'myvariable' whenever this will be called it will call whatever is passed over 'this'
 }
 
 function main(){
     console.log("Main is called");
 }
 
-setTimeoutPromsified().then(main); // main is called after 3 seconds
+setTimeoutPromisified().then(main); // main is called after 3 seconds

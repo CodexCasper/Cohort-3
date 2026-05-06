@@ -1,9 +1,7 @@
 /*
 No need to do this as of now onwards!
-// Import express module
 const express = require("express");
-// Create a new Router instance for user routes
-const Router = express.Router;
+const Router = express.Router;  // Create a new Router instance for user routes
 */
 
 // Import the Router object from the express module to create route handlers , here {Router} is a class 

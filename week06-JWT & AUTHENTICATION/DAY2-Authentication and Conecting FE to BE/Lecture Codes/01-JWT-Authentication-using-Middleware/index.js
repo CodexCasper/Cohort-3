@@ -69,7 +69,7 @@ console.log(users);
 })
 
 function auth(req,res,next){// a middleware to verify whether user logged in or not and to not write the same code over and over again
-    const token = req.headers.token;//abstracting the token
+    const token = req.headers.token;// abstracting the token
     const decodedInformation = jwt.verify(token,JWT_SECRET);
 
     if(decodedInformation.username){
@@ -109,4 +109,7 @@ app.listen(3000,() =>{
 })  
 
 // Notes:
-// - Jitne bhi middleware hote yeh sare same req aur res use krte hai...isliye hmlg line 66 mein req.username mein decodedData.username ko store kr diye hai aur ussi ko niche wle get route mein add kr diye line 82 mein jisse woh username share ho pa rha hai..so aise hi yahi se we can pass dat through the middleware to next method or the get route
+/*- Jitne bhi middleware hote yeh sare same req aur res use krte hai...isliye hmlg line 66 mein req.username mein 
+ decodedData.username ko store kr diye hai aur ussi ko niche wle get route mein add kr diye line 82 mein jisse woh 
+ username share ho pa rha hai..so aise hi yahi se we can pass data through the middleware to next method or the get route
+ */

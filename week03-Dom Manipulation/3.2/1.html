@@ -11,11 +11,11 @@
 
     <script>
         function createComplexDomElement(){
-            const value = document.querySelector("input").value;//fetching the data inside "input" and fetching its value
-            const spanEl = document.createElement("span");//creating and storing a span tag 
-            const buttonEl = document.createElement("button");//creating and storing a button element 
+            const value = document.querySelector("input").value; //fetching the data inside "input" and fetching its value
+            const spanEl = document.createElement("span"); //creating and storing a span tag 
+            const buttonEl = document.createElement("button"); //creating and storing a button element 
 
-            spanEl.innerHTML =  value;// updating the value of input in span
+            spanEl.innerHTML =  value;// updating the value of input in span , as we can the modify the object but can not reassign it 
             buttonEl.innerHTML = "Delete";//updating the value of button but here it is fixed
 
             const divEl = document.createElement("div");//here first we created two elements "span,button" then put inside an div tag and then div tag is putted inside body
@@ -25,7 +25,6 @@
            // divEl.innerHTML = "<div>" + value + "</div><button> Delete </button>";
 
             document.querySelector("body").appendChild(divEl);// and in the last we are appending our whole div tag in body.
-
         }
     </script>
 </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch api using axios example</title>
+
+    <!-- axios is a external library , we use it for slightly simple way to fetch api instead of using fetch function -->
+    <!--axios library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
+    <!-- in case of html, css ,js we create a 'script tag' and in node we use 'require' -->
+</head>
+<body>
+    Linkedin
+    <div id="101"></div>
+    <script>
+        async function getPosts(){
+            // yeh data fetch karega from the server using the axios and get,put,post,delete methods sab uske saath hi honge fetch ke jaisa alag se likhne ki zarurat nahi 
+            const response = await axios.get("https://jsonplaceholder.typicode.com/posts/2")
+            const data = response.data;
+            document.getElementById("101").innerHTML = response.data.title;   // data.title means fetch the title from this jsonpla.. website 
+        //  document.getElementById("101").innerText = JSON.stringify(data);
+        }
+        getPosts();
+    </script>
+</body>
+</html>

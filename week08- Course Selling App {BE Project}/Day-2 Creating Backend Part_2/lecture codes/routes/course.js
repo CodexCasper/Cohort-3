@@ -38,7 +38,7 @@ courseRouter.post("/purchase",usermiddleware ,async function(req,res){
         });
     }
 
-    ///trying to create a new purchase entry if he user buys the course     
+    ///trying to create a new purchase entry if the user buys the course     
     await purchasemodel.create({
         courseId: courseId,      //the ID  of the course being purchased
         userId: userId,         //the Id of the user making the purchase 

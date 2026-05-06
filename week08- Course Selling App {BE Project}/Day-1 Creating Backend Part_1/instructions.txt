@@ -1,0 +1,9 @@
+here we are writing commands for smthng
+
+to create a new folder => "mkdir" week08- Course Selling App{BE project}
+to go inside that folder => "cd" week08- Course Selling App{BE project}
+to open that folder => "pwd" 
+to initiliaze a empty javascript project => "npm init -y" it initiliazes a package.json 
+to make a new index.js file => "type nul >" index.js
+to run this index file => node index.js 
+to install thhe dependdencies =>" npm install " express mongoose jsonwebtoken 

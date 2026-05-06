@@ -2,7 +2,9 @@
 // we can use fetch in frontend to get that
 
 // CORS => cross origin resource sharing 
-// Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers that controls how resources on a web server can be requested from another domain. It's a crucial mechanism for managing cross-origin requests and ensuring secure interactions between different origins on the web.
+/* Cross-Origin Resource Sharing (CORS) is a security feature implemented by web browsers that controls how resources on a web server 
+ can be requested from another domain. It's a crucial mechanism for managing cross-origin requests and ensuring secure interactions 
+ between different origins on the web. */
 // by default cors is blocked in node.js 
 
 // creating an HTTP server 
@@ -17,7 +19,7 @@ app.use(cors());
 // we can host frontend and backend on the same domain but usually we dont 
 
 // app.get("/", (req,res){
-//res.sendfile(__dirname + "/public/frontend.html");
+// res.sendfile(__dirname + "/public/frontend.html");
 // })
 
 app.post("/sum", function(req,res){

@@ -10,8 +10,8 @@ function usingMiddleware(req,res,next){
         next();
     }
     else{
-        res.json({
-            msg:"Go get bigger motherfucker"
+        res.status(403).json({
+            msg:"Go get bigger"
         })
     }
 }
@@ -20,13 +20,13 @@ function usingMiddleware(req,res,next){
 //app.use(usingMiddleware);
 
 app.get("/ride2", usingMiddleware,function(req,res){
-    res.json({
+    res.status(403).json({
         msg:"Jaa ghum apni 2nd ride"
     })
 })
 
 app.get("/ride1", usingMiddleware, function(req,res){
-    res.json({
+    res.status(403).json({
         msg:" Jaa ghum apni 1st ride"
     })
 })

@@ -1,6 +1,6 @@
 // ASYNC JS(video title)
 
-//1 topic: normal functions in JS
+//1st topic: normal functions in JS
 
 //find sum of two numbers
 
@@ -26,7 +26,7 @@ function summation(n){
 let ans = summation(5);
 console.log("Topic:Find sum from 1 to a numbers in JS => " , ans);
 
-// whatever we are learning is synchronous JS, => which means it is executed line by line in the order it's  written. Each operation waits for the previous one to complete before it moves on to the nnext one 
+// whatever we are learning is synchronous JS, => which means it is executed line by line in the order it's written. Each operation waits for the previous one to complete before it moves on to the next one 
 
 
 //main part for Async JS
@@ -38,7 +38,7 @@ console.log("Topic:Find sum from 1 to a numbers in JS => " , ans);
 
 //examples
 //1. reading a file
-//suppose we have a ,var a = readfile(a.txt) which wants to read a file name"a.txt" which store smthng like i.e.("hi there") , basically it can happen that we have to wait for it or Os throws error bcoz the file doesnot exists and we have to wait for it to execute 
+//suppose we have a ,var a = readfile(a.txt) which wants to read a file name"a.txt" which store smthng like i.e.("hi there") , basically it can happen that we have to wait for it or O throws error bcoz the file doesnot exists and we have to wait for it to execute 
 
 //2.starting a clock
 // var a = wait(1) // thread will be stuck over here for a second before printing "parth"
@@ -60,11 +60,11 @@ const contents = fs.readFileSync("a.txt","utf-8");//readfilesync is a function w
 
 console.log(contents);
 
-//asynchronously( start all together and waiting for them to finish )
+//asynchronously( start all together and waiting for them to finish ) run parallely 
 const contents1 = fs.readFile("b.txt","utf-8");
 
 console.log(contents1);
-//here js will execute each line one by one and if just suppose 'readfilesync' takes 10 sec also to complete its work reading the file'a.txt' then also we must wait , and here our performance degrades 
+//here js(contents)(synchronous way) will execute each line one by one and if just suppose 'readfilesync' takes 10 sec also to complete its work reading the file'a.txt' then also we must wait , and here our performance degrades 
 
 
 
@@ -112,7 +112,7 @@ console.log(doOperation(1, 2, sum)); // here if in place of sum if we had used s
 
 
 
-//correct way to of using 'fs' module to read a file is hereby we will se
+//correct way of using 'fs' module to read a file is hereby we will se
 
 const fs = require("fs");
 
@@ -132,7 +132,7 @@ console.log("done!");
 //here the reason to use readfile is it will read the file and whenever it will complete its willl call function 'print', so here its not waiting for the first content10 to complete and then contents11 will run( synchronously way ) istead both will start simultaneously and whenever they will finish they must call the function
 
 
-// let us another asynchronous function
+// let us write another asynchronous function
 
 console.log("hi");
 
@@ -140,7 +140,7 @@ function timeout(){
     console.log("Done");
 }
 
-setTimeout(timeout , 5000); // another asynchronous function which will call the 'timeout' function after 5000 ms and the format of executing starts from the first line all of that gt defined and 'setTimeout' gets execute after 5000 ms
+setTimeout(timeout , 5000); // another asynchronous function which will call the 'timeout' function after 5000 ms and the format of executing starts from the first line all of that get defined and 'setTimeout' gets execute after 5000 ms
 
 console.log("welcome to luope !");
 
@@ -168,3 +168,6 @@ for( let i = 0 ; i < 12 ; i++ ){ // then it will get to execute this whtever tim
 
 console.log("Experiments got done !");
 //whenever the loop finishes the timeout function gets executed
+
+//Js can only handle a single task at a time , which means suppose if one program is running others must wait until that one gets fully executed and that degrades the performance 
+//also sometimes we do need to run in order like first this function or this task then next one that can happen according to our need 
